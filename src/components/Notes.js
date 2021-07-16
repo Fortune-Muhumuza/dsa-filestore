@@ -12,7 +12,7 @@ const Notes = () => {
     const showAvailableNotes = () => {
     // Create a reference under which you want to list
     const listRef = storageRef.child('files');
-    
+    const arr = []
     // Find all the prefixes and items.
     listRef.listAll()
       .then((res) => {
@@ -23,14 +23,15 @@ const Notes = () => {
         });
         res.items.forEach((itemRef) => {
           //console.log(itemRef)
-          const arr = []
+          
           arr.push(itemRef.name)
           console.log(arr)
-          setNotes([itemRef.name])
         });
       }).catch((error) => {
         // Uh-oh, an error occurred!
       });
+          setNotes(arr)
+        
     }
 
     useEffect(() => {
