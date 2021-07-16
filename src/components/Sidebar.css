@@ -1,0 +1,58 @@
+.sidebar{
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 90vh;
+    }
+
+.side-nav{
+font-size: 1.4rem;
+list-style: none;
+margin-top: 3.5rem;
+
+}
+
+.side-nav__item{
+transition: .1s;
+}
+
+.side-nav__item:hover{
+    border-left: .2rem rgb(44, 68, 206) solid;
+    background-color: rgb(163, 235, 235);
+}
+
+.side-nav__link{
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+}
+.side-nav__link:visited{
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.side-nav__icon{
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    color: currentColor;
+}
+
+.legal{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2.5rem;
+    color: var(--color-grey-light-4);
+
+}
