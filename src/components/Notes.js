@@ -1,7 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Notes.css'
+import { firebaseApp } from '../firebase'
 
 const Notes = () => {
+
+
+    const [notes, setNotes] = useState([])
+
+    const storageRef = firebaseApp.storage().ref()
+
+    const showAvailableNotes = () => {
+    // Create a reference under which you want to list
+    const listRef = storageRef.child('files');
+    
+    // Find all the prefixes and items.
+    listRef.listAll()
+      .then((res) => {
+        res.prefixes.forEach((folderRef) => {
+          // All the prefixes under listRef.
+         
+          // You may call listAll() recursively on them.
+        });
+        res.items.forEach((itemRef) => {
+          //console.log(itemRef)
+          const arr = []
+          arr.push(itemRef.name)
+          console.log(arr)
+          setNotes([itemRef.name])
+        });
+      }).catch((error) => {
+        // Uh-oh, an error occurred!
+      });
+    }
+
+    useEffect(() => {
+        showAvailableNotes()
+   
+    }, [])
+
+
+
     return (
         <div className='notes'>
             <div className="notes__header">
@@ -14,6 +52,13 @@ const Notes = () => {
                         <option value="opel">Oral surgery</option>
                     </select>
                 </div>
+            </div>
+            <div className="notes__mainContent">
+              
+                  {
+                      notes.map(note => <p>{note}</p>)
+                  }
+               
             </div>
 
         </div>

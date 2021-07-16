@@ -9,6 +9,7 @@ import {
 import Header from './components/Header'
 import Home from './components/Home'
 import Sidebar from './components/Sidebar'
+import Admin from './components/Admin'
 import Notes from './components/Notes'
 
 const App = () => {
@@ -21,6 +22,9 @@ const App = () => {
           <Switch>
           <Route path='/notes'>
             <Notes />
+          </Route>
+          <Route path='/admin2000'>
+            <Admin />
           </Route>
           <Route path='/'>
             <Home />

@@ -5,12 +5,17 @@ const Admin = () => {
 
     const onChange = (e) => {
         const file = e.target.files[0];
-        const storageRef = firebaseApp.storage().ref()
+        let storageRef = firebaseApp.storage().ref('files')
         const fileRef = storageRef.child(file.name)
         fileRef.put(file).then(() => {
             console.log('Uploaded file to server')
         }).catch((err) => console.log(err))
     }
+     
+    
+
+
+
 
     return (
         <div className="admin">
