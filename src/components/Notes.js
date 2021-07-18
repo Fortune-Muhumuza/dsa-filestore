@@ -25,7 +25,7 @@ const Notes = () => {
           //console.log(itemRef)
           itemRef.getDownloadURL().then((url) => {
            arr.push({name:itemRef.name, url:url});
-          console.log(url)
+         // console.log(url)
           })
           //
         });
@@ -34,7 +34,8 @@ const Notes = () => {
       .catch((error) => {
         // Uh-oh, an error occurred!
       });
-    //console.log("the array iss", arr);
+
+    console.log("the array iss", arr);
 
 
 
@@ -65,13 +66,13 @@ const Notes = () => {
         <tr>
                 <th>Name</th>
                 <th>Course unit</th>
-                <th>Date uploaded</th>
+                <th>Download</th>
               </tr>
           {notes.map((note) => (
               <tr>
-                <td>{note}</td>
+                <td>{note.name}</td>
                 <td>Anatomy</td>
-                <td>20/4/2021</td>
+                <td>{note.url}</td>
               </tr>
           ))}
         </table>
