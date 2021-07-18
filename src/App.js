@@ -16,13 +16,14 @@ const App = () => {
   return (
     <Router>
       <div className="container">
-        <Header />
+        
         <div className="content">
           <Sidebar />
           <Switch>
           <Route path='/notes'>
             <Notes />
           </Route>
+          {/* <Header /> */}
           <Route path='/admin2000'>
             <Admin />
           </Route>

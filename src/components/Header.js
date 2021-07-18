@@ -8,7 +8,6 @@ import {Avatar} from '@material-ui/core'
 const Header = () => {
     return (
         <div className="header">
-            <h1 className='logo'>DSA</h1>
             <form action="#" className='search'>
                 <input type='text' className='search__input' placeholder='search' />
                 <button className='search__button'>
