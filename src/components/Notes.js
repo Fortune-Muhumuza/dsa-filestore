@@ -34,9 +34,7 @@ const Notes = () => {
       .catch((error) => {
         // Uh-oh, an error occurred!
       });
-
-    console.log("the array iss", arr);
-
+    //console.log("the array iss", arr);
 
 
   };
@@ -66,13 +64,13 @@ const Notes = () => {
         <tr>
                 <th>Name</th>
                 <th>Course unit</th>
-                <th>Download</th>
+                <th>Date uploaded</th>
               </tr>
           {notes.map((note) => (
               <tr>
-                <td>{note.name}</td>
+                <td>{note}</td>
                 <td>Anatomy</td>
-                <td>{note.url}</td>
+                <td>20/4/2021</td>
               </tr>
           ))}
         </table>
