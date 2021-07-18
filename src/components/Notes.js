@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./Notes.css";
 import { firebaseApp } from "../firebase";
+import Header from "./Header";
 
 const Notes = () => {
   const [notes, setNotes] = useState([]);
 
   const storageRef = firebaseApp.storage().ref();
 
-  const showAvailableNotes = async () => {
+  const showAvailableNotes = () => {
     // Create a reference under which you want to list
     const listRef = storageRef.child("files");
     const arr = [];
 
     // Find all the prefixes and items.
-    await listRef
+    listRef
       .listAll()
       .then((res) => {
         res.prefixes.forEach((folderRef) => {
@@ -24,13 +25,14 @@ const Notes = () => {
           //console.log(itemRef)
           arr.push(itemRef.name);
         });
+        setNotes(arr);
       })
       .catch((error) => {
         // Uh-oh, an error occurred!
       });
-    console.log("the array iss", arr);
+    //console.log("the array iss", arr);
 
-    setNotes(arr);
+
   };
 
   useEffect(() => {
@@ -40,21 +42,35 @@ const Notes = () => {
 
   return (
     <div className="notes">
+      <Header />
       <div className="notes__header">
         <h1>Download notes</h1>
         <div className="notes__header-select">
-          <label for="cars">Course unit:</label>
-          <select name="cars" id="cars">
-            <option value="volvo">Anatomy</option>
-            <option value="saab">Physiology</option>
-            <option value="opel">Oral surgery</option>
+          <label for="course-units" className="label">Course unit:</label>
+          <select name="course unit" className="select">
+            <option value="">Anatomy</option>
+            <option value="">Physiology</option>
+            <option value="">Oral surgery</option>
           </select>
         </div>
       </div>
       <div className="notes__mainContent">
-        {notes.map((note) => (
-          <p>{note}</p>
-        ))}
+
+        <table>
+        <tr>
+                <th>Name</th>
+                <th>Course unit</th>
+                <th>Date uploaded</th>
+              </tr>
+          {notes.map((note) => (
+              <tr>
+                <td>{note}</td>
+                <td>Anatomy</td>
+                <td>20/4/2021</td>
+              </tr>
+          ))}
+        </table>
+
       </div>
     </div>
   );
