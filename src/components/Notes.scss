@@ -1,0 +1,117 @@
+.notes{
+    flex: 1;
+    background-image: linear-gradient(to right bottom, rgba(lightblue, 0.8), rgba(dodgerblue, 0.8));
+}
+
+.notes__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 1.5rem;
+    background-color: var(--color-white);
+
+    &--select{
+        color: var(--color-text-black-1);
+        font-size: 2rem;
+        font-family: inherit;
+
+        &-input{
+            font-size: 1.6rem;
+            color: inherit;
+            font-family: inherit;
+            border-radius: 50rem;
+            padding: var(--select-padding-1);
+            background-color: var(--color-inputs-1);
+
+            &:focus{
+                outline: none;
+                border: 1px solid lightskyblue;
+            }
+        }
+    }
+}
+
+.notes__header--heading-primary {
+    color: var(--color-text-black-1);
+    backface-visibility: hidden;
+
+    &--main {
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
+
+.notes__main-content{
+    padding: 4rem 2rem;
+
+    &>h1{
+        margin-bottom: 1.5rem;
+        color: var(--color-text-black-1);
+    }
+
+    &--cards-container{
+        display: flex;
+        flex-wrap: wrap;
+
+        &-card{
+            padding: 3rem;
+            background-color: var(--color-white);
+            width: 17rem;
+            height: 18rem;
+            border-radius: 1.2rem;
+            margin-right: 2.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            animation: moveInBottom .7s ease-out;
+
+            &-name{
+                font-size: 1.2rem;
+                font-weight: 500;
+                padding: .5rem 1rem;
+                border-radius: 1rem;
+                display: block;
+                background-color: #eb4242;
+                color: white;
+            }
+       
+
+            &:hover{
+                box-shadow: 0 2px 5px black;
+            }
+        }
+    }
+}
+
+.download-button{
+    text-decoration: none;
+    font-size: 1.3rem;
+    background-color: rgb(140, 224, 12);
+    padding: .6rem .9rem;
+    border-radius: .3rem;
+    color: white;
+
+    &:hover{
+        box-shadow: 0 2px 4px black;
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

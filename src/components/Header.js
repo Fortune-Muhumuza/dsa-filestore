@@ -1,35 +1,46 @@
 import React from 'react'
-import './Header.css'
+import './Header.scss'
 import SearchIcon from '@material-ui/icons/Search';
 import MessageIcon from '@material-ui/icons/Message';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import {Avatar} from '@material-ui/core'
+import sprite from "../assets/sprite.svg";
+import { Avatar } from '@material-ui/core'
 
 const Header = () => {
     return (
         <div className="header">
-            <form action="#" className='search'>
-                <input type='text' className='search__input' placeholder='search' />
-                <button className='search__button'>
-                    <SearchIcon className='search__icon' />
-                </button>
-            </form>
-            <nav className='user-nav'>
-                <div className='user-nav__icon-box'>
-                    <div className='user-nav__icon'>
-                        <MessageIcon />
+            <div>
+
+                <form action="#" className='header__search'>
+                    <input type='text' className='header__search--input' placeholder='search' />
+                    <button className='header__search--button'>
+                        search
+                    </button>
+                </form>
+            </div>
+
+            
+                <nav className="header__nav">
+                    <div className='header__nav--icon-box'>
+                        <div className='header__nav--icon'>
+                            <svg className="header--icon">
+                                <use href={`${sprite}#icon-bell`}></use>
+                            </svg>
+                        </div>
                     </div>
-                </div>
-                <div className='user-nav__icon-box'>
-                    <div className='user-nav__icon'>
-                        <NotificationsIcon />
+                    <div className='header__nav--icon-box'>
+                        <div className='header__nav--icon'>
+                            <svg className="header--icon">
+                                <use href={`${sprite}#icon-bubbles4`}></use>
+                            </svg>
+                        </div>
                     </div>
-                </div>
-                <div className='user-nav__user'>
-                    <Avatar />
-                    <span className='user-nav__user-name'>Peter</span>
-                </div>
-            </nav>
+                    <div className='header__nav--icon-box'>
+                        <Avatar />
+                        <span className='header__nav--username'>Peter</span>
+                    </div>
+                </nav>
+            
         </div>
     )
 }

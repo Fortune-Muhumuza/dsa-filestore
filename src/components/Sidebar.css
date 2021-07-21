@@ -1,83 +1,73 @@
 .sidebar{
-    background-color: dodgerblue;
+    background-color: var(--color-black-1);
     flex: 0 0 18%;
+    height: 100vh;
+    padding: 1.5rem;
+    height: 100rem;
+   
+}
+
+.sidebar__header{
+    margin-bottom: 2rem;
+}
+
+.sidebar__header--user-card{
     display: flex;
     flex-direction: column;
-    min-height: 90vh;
-    }
-
-.logo{
-    width: 23rem;
-    height: 15rem;
-}
-
-ul{
-    margin-bottom: 30rem;
-}
-
-.side-nav{
-font-size: 1.4rem;
-list-style: none;
-margin-top: 3.5rem;
-text-decoration: none;
-}
-
-a{
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-}
-
-/* a{
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-} */
-
-.side-nav__item{
-transition: .1s;
-}
-
-.side-nav__item:hover{
-    background-color: rgb(163, 235, 235);
-    border-radius: 10px;
-}
-
-.side-nav__link{
-    color: var(--color-grey-light-1);
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    padding: 1.5rem 3rem;
-    display: flex;
     align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.sidebar__header--user-card-picture{
+    border-radius: 10rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar__header--user-card-details-username{
+    color: white;
+    font-size: 1.9rem;
+}
+
+.sidebar__header--user-card-details-email{
+    font-size: 1.5rem;
+}
+
+.sidebar__options{
+    color: white;
+    font-size: 1.8rem;
+}
+
+.sidebar__options--heading{
+    color: #818CF8;
     font-size: 2rem;
-    font-weight: 600;
 }
 
-/* .side-nav__link:visited{
-    color: var(--color-grey-light-1);
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    padding: 1.5rem 3rem;
+.sidebar__options--list{
+  list-style: none;
+
+}
+
+.sidebar__options--list-item{
+    padding: 1rem;
+}
+
+.sidebar__options--list-item:hover,
+.sidebar__options--list-item:active{
+    background-color: #2C3344;
+    border-radius: .8rem;
+}
+.side-nav__link{
     display: flex;
     align-items: center;
-    
-} */
-
-/* .side-nav__icon{
-    width: 2rem;
-    height: 2rem;
-    fill: currentColor;
-    margin-right: 2rem;
-    z-index: 10000;
-} */
-
-.legal{
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 2.5rem;
-    color: var(--color-grey-light-4);
-
+    text-decoration: none;
+    color: white;
 }
+.side-nav__link--icon{
+    height: 2rem;
+    width: 2rem;
+    fill: white;
+    margin-right: 2rem;
+}
+
+
+

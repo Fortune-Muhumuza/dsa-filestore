@@ -1,34 +1,58 @@
 import React from 'react'
 import './Sidebar.css'
-import sprite from '../img/sprite.svg'
+import sprite from "../assets/sprite.svg";
 import { NavLink } from 'react-router-dom'
-import logo from '../logo.jpg'
+import userPicture from '../img/user.jpg'
 
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <img className="logo" src={logo} />
-            <ul className='side-nav'>
-                <li className="side-nav__item">
 
-                    <a href='#' className='side-nav__link'>
-                  
+            <div className="sidebar__header">
+                <div className="sidebar__header--logo">
+                    <h1>DSA</h1>
+                </div>
+                <div className="sidebar__header--icons">
 
-                        <NavLink to='/'>
+                </div>
+            </div>
+
+            <div className="sidebar__header--user-card">
+                <img className="sidebar__header--user-card-picture" src={userPicture} />
+
+                <span className="sidebar__header--user-card-details-username">Peterson Frank</span>
+                <span className="sidebar__header--user-card-details-email">petersonfrank@yahoo.com</span>
+
+            </div>
+
+            <div className="sidebar__options">
+                <h1 className="sidebar__options--heading">Options</h1>
+                <ul className='sidebar__options--list'>
+                    <li className="sidebar__options--list-item">
+
+
+
+                        <NavLink to='/' className='side-nav__link' activeClassName="side-nav__link--active">
+                            <svg className="side-nav__link--icon">
+                                <use href={`${sprite}#icon-home2`}></use>
+                            </svg>
                             <span>Home</span>
                         </NavLink>
-                    </a>
-                </li>
-                <li className="side-nav__item">
-                    <a href='#' className='side-nav__link'>
 
-                        <NavLink to='/notes'>
+                    </li>
+                    <li className="sidebar__options--list-item">
+
+                        <NavLink to='/notes' className='side-nav__link'  activeClassName="side-nav__link--active">
+                        <svg className="side-nav__link--icon">
+                                <use href={`${sprite}#icon-book`}></use>
+                            </svg>
                             <span>Notes</span>
                         </NavLink>
-                    </a>
-                </li>
 
-            </ul>
+                    </li>
+
+                </ul>
+            </div>
             <div className='legal'>
                 &#169; 2021 DSA
             </div>

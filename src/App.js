@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,10 +15,12 @@ import Notes from './components/Notes'
 const App = () => {
   return (
     <Router>
-      <div className="container">
-        
+      <div className="container"> 
+      
+     
         <div className="content">
-          <Sidebar />
+        <Sidebar />
+         
           <Switch>
           <Route path='/notes'>
             <Notes />
