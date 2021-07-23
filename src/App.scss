@@ -2,20 +2,61 @@
     --color-black-1: #0F172A;
     --color-black-2: #1E293B;
     --color-white: white;
+    --color-grey-light: #F4F2F2;
 
     --color-inputs-1: #f4f2f2;
     --color-inputs-2: #f0eeee;
+
+    --content-bg-color-1: #d1dbdd;
+
+    --card-hover-shadow: 0 2px 5px black;
 
     --input-padding-1: 1rem 1.5rem;
     --select-padding-1: .5rem 1rem;
 
     --color-content-background: #dce6f0;
-    --color-content-gradient: linear-gradient(to right bottom, rgba(lightblue, 0.8), rgba(dodgerblue, 0.8));
+    --color-content-gradient: linear-gradient(to right bottom, rgba(#48cae4, 0.8), rgba(#023e8a, 0.8));
 
     --color-text-black-1: #1E293B;
 
     --color-buttons-1: #473FCE;
+
+    --card-border-radius: 1.2rem;
    }
+
+  
+  /*
+  breakpoint arguement choices
+  phone
+  tab-pot
+  tab-land
+  big-desktop
+  */
+
+  @mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+      @media(max-width: 37.5em) { 
+        @content
+      }
+    }
+
+    @if $breakpoint == tab-pot {
+      @media(max-width: 56.25em) {
+        @content
+      }
+    }
+    @if $breakpoint == tab-land {
+      @media(max-width: 75em) {
+        @content
+      }
+    }
+    @if $breakpoint == big-desktop {
+      @media(min-width: 112.5em) {
+        @content
+      }
+    }
+    
+  }
 
    *, *::after, *::before {
      margin: 0;
@@ -26,15 +67,30 @@
    html {
      /* // defines what 1 rem is  */
      font-size: 62.5%;
+
+     @include respond(tab-land){
+      font-size: 56.25%;
+    }
+
+     @include respond(tab-pot){
+      font-size: 53%;
+    }
+
+
+    @include respond(big-desktop){
+      font-size: 75%;
+    }
    }
 
    body {
-     font-family: "Open Sans" sans-serif;
+    font-family: 'Bitter', serif;
      font-weight: 400;
      /* font-size: 16px; */
      line-height: 1.7;
      color: #777;
      box-sizing: border-box;
+
+     
    }
 
    .content{
@@ -44,4 +100,19 @@
   .container{
     min-height: 50rem;
   }
+
+  a{
+    text-decoration: none;
+  }
+
+
+  //media querry mixins
+
+  // 0-600 Phone
+  // 600-900 Tab 
+  // 900-1200px tab landscape
+  // 1200-1800 normal styles
+
+
+
 

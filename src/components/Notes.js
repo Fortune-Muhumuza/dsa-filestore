@@ -43,7 +43,7 @@ const Notes = () => {
             8 files available
           </span>
         </h1>
-
+{/* 
         <div className="notes__header--select">
           <label for="course-units" className="label">Course:</label>
           <select name="course unit" className="notes__header--select-input">
@@ -53,7 +53,7 @@ const Notes = () => {
             <option value="">Medical Radiography</option>
             <option value="">Medical Laboratory Technology</option>
           </select>
-        </div>
+        </div> */}
 
       </div>
 

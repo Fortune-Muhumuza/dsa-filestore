@@ -1,6 +1,9 @@
+@import "mixins";
+
 .notes{
     flex: 1;
-    background-image: linear-gradient(to right bottom, rgba(lightblue, 0.8), rgba(dodgerblue, 0.8));
+    // background-image: linear-gradient(to right bottom, rgba(#48cae4, 0.8), rgba(#023e8a, 0.8));
+    background-color: var(--content-bg-color-1);
 }
 
 .notes__header{
@@ -61,11 +64,16 @@
         flex-wrap: wrap;
 
         &-card{
-            padding: 3rem;
-            background-color: var(--color-white);
-            width: 17rem;
-            height: 18rem;
-            border-radius: 1.2rem;
+            @include respond(tab-pot){
+                width: 17rem;
+                height: 16rem;
+              }
+
+            padding: 1.5rem;
+            background-color: var(--color-grey-light);
+            width: 20rem;
+            height: 19rem;
+            border-radius: var(--card-border-radius);
             margin-right: 2.5rem;
             margin-bottom: 2.5rem;
             display: flex;
@@ -75,9 +83,13 @@
             animation: moveInBottom .7s ease-out;
 
             &-name{
-                font-size: 1.2rem;
-                font-weight: 500;
-                padding: .5rem 1rem;
+                @include respond(tab-pot){
+                    padding: 1rem 1.7rem;
+                  }
+
+                font-size: 1.4rem;
+                font-weight: 600;
+                padding: 1.3rem 2rem;
                 border-radius: 1rem;
                 display: block;
                 background-color: #eb4242;
@@ -86,7 +98,7 @@
        
 
             &:hover{
-                box-shadow: 0 2px 5px black;
+                box-shadow: var(--card-hover-shadow);
             }
         }
     }
@@ -95,8 +107,9 @@
 .download-button{
     text-decoration: none;
     font-size: 1.3rem;
-    background-color: rgb(140, 224, 12);
-    padding: .6rem .9rem;
+    font-weight: 600;
+    background-color: rgb(123, 201, 7);
+    padding: 1rem 1.5rem;
     border-radius: .3rem;
     color: white;
 

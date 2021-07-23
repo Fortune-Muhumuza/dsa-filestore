@@ -1,10 +1,20 @@
+@import "mixins";
+
 .sidebar{
     background-color: var(--color-black-1);
     flex: 0 0 18%;
+    flex-direction: column;
     height: 100vh;
     padding: 1.5rem;
     height: 100rem;
-   
+    display: flex;
+   justify-content: space-between;
+
+   @include respond(tab-pot){
+    font-size: 50%;
+    display: none;
+  }
+
 }
 
 .sidebar__header{

@@ -1,5 +1,5 @@
 import React from 'react'
-import './Sidebar.css'
+import './Sidebar.scss'
 import sprite from "../assets/sprite.svg";
 import { NavLink } from 'react-router-dom'
 import userPicture from '../img/user.jpg'
@@ -15,9 +15,8 @@ const Sidebar = () => {
                 <div className="sidebar__header--icons">
 
                 </div>
-            </div>
 
-            <div className="sidebar__header--user-card">
+                <div className="sidebar__header--user-card">
                 <img className="sidebar__header--user-card-picture" src={userPicture} />
 
                 <span className="sidebar__header--user-card-details-username">Peterson Frank</span>
@@ -53,6 +52,11 @@ const Sidebar = () => {
 
                 </ul>
             </div>
+            </div>
+
+          
+
+
             <div className='legal'>
                 &#169; 2021 DSA
             </div>

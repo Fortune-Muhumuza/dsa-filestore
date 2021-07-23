@@ -20,7 +20,7 @@ const Header = () => {
             </div>
 
             
-                <nav className="header__nav">
+                <div className="header__nav">
                     <div className='header__nav--icon-box'>
                         <div className='header__nav--icon'>
                             <svg className="header--icon">
@@ -39,7 +39,7 @@ const Header = () => {
                         <Avatar />
                         <span className='header__nav--username'>Peter</span>
                     </div>
-                </nav>
+                </div>
             
         </div>
     )

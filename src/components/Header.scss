@@ -1,29 +1,67 @@
+@import "mixins";
+
 .header{
+    // font-size: 1.4rem;
+    //   background-color: rgb(255, 255, 255);
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   flex: 1;
+    //   padding: 1.5rem;
+    //   box-shadow: 0 3px 2px rgb(22, 21, 21);
+    //   border-bottom: 1px solid black;
     font-size: 1.4rem;
-      background-color: rgb(255, 255, 255);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex: 1;
-      padding: 1.5rem;
-      box-shadow: 0 3px 2px rgb(22, 21, 21);
-      border-bottom: 1px solid black;
+    height: 7rem;
+    background-color: #fff;
+    //border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .1rem;
+    box-shadow: 0 3px 5px rgb(165, 161, 161);
+
+    &--icon{
+        height: 2.35rem;
+        width: 2.35rem;
+        fill: #473FCE;
+    }
 
       &__nav{
           display: flex;
+          align-self: stretch;
           align-items: center;
+          justify-content: space-between;
+          
+          & > * {
+              padding: 0 2rem;
+              cursor: pointer;
+              height: 100%;
+          }
+
+    
+
+    
 
           &--icon-box{
-              display: flex;
-              align-items: center;
+            display: flex;
+            align-items: center;
+
+              &:hover{
+                  background-color: var(--color-grey-light);
+              }
           }
       }
 
      &__search{
 
+        @include respond(tab-pot){
+            display: none;
+          }
+
         flex: 0 0 60%;
         display: flex;
         justify-content: center;
+
 
          &--input{
              font-family: inherit;
@@ -36,6 +74,9 @@
             width: 90%;
             transition: all .2s;
             margin-right: -3.25rem;
+
+            
+
 
             &:focus{
                 outline: none;
@@ -64,12 +105,11 @@
 
      }
 
-      &--icon{
-        width: 3rem;
-        height: 3rem;
-        fill: #818CF8;
-        margin-right: 2rem;
-      }
+    //   &--icon{
+    //     width: 3rem;
+    //     height: 3rem;
+    //     fill: var(--color-black-2);
+    //   }
 
 
   }

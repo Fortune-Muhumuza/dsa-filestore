@@ -1,8 +1,64 @@
+@import "mixins";
+
 .home{
-    background-color: white;
- 
+    background-color: var(--content-bg-color-1);
     flex: 1;
+
+    &__content{
+        padding: 4rem 2rem;
+
+        &--card{
+            background-color: var(--color-grey-light);
+            padding: 2rem;
+            width: 40rem;
+            aspect-ratio: 1/1;
+            border-radius: var(--card-border-radius);
+            animation: moveInBottom .7s ease-out;
+
+            &-icon{
+                height: 2rem;
+                width: 2rem;
+                margin-right: 1rem;
+                fill: #473FCE;
+            }
+
+            @include respond(tab-pot){
+                width: 30rem;
+              }
+
+            &:hover{
+                box-shadow: var(--card-hover-shadow);
+            }
+
+            &-heading{
+                margin-bottom: 1rem;
+            }
+
+            &>h2{
+                border-bottom: .2rem solid var(--content-bg-color-1);
+                margin-bottom: 2.4rem;
+                cursor: pointer;
+                color: var(--color-text-black-1);
+
+              
+            }
+        }
     }
+
+    }
+
+    .link{
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: var(--color-text-black-1);
+        display: flex;
+        align-items: center;
+
+        &:hover{
+            color: rgb(19, 36, 185);
+        }
+    }
+
 
 
 .home__header{
@@ -12,13 +68,25 @@
     align-items: center;
     justify-content: space-between;
 
+    &--icon{
+        height: 2rem;
+        width: 2rem;
+        fill: white;
+        margin-right: 1rem;
+    }
+
     &--text-box{
         display: flex;
+
+        &-buttons{
+            @include respond(tab-pot){
+                display: none;
+              }
+        }
     
         &-picture{
             height: 8rem;
             border-radius: 10rem;
-            margin-right: 2rem;
         }
         
     }
@@ -46,6 +114,8 @@
 
 
 .btn{
+
+    
      
     &:link, 
     &:visited {
@@ -69,6 +139,11 @@
         background-color: var(--color-white);
         color: #777;
 
+    }
+
+    &--flexed{
+        display: flex;
+        align-items: center;
     }
 
     }
