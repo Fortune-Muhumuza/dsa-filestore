@@ -52,7 +52,7 @@ const Home = () => {
                         </NavLink></h2>
 
                         <h2>
-                        <NavLink to='/notes' className='link'>
+                        <NavLink to='/courseOutline' className='link'>
                         <svg className="home__content--card-icon">
                                 <use href={`${sprite}#icon-list`}></use>
                             </svg>
@@ -60,7 +60,7 @@ const Home = () => {
                         </NavLink></h2>
 
                         <h2>
-                        <NavLink to='/notes' className='link'>
+                        <NavLink to='/timetable' className='link'>
                         <svg className="home__content--card-icon">
                                 <use href={`${sprite}#icon-table2`}></use>
                             </svg>

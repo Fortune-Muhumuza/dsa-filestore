@@ -8,6 +8,7 @@
     --color-inputs-2: #f0eeee;
 
     --content-bg-color-1: #d1dbdd;
+    --content-padding: 4rem 2rem;
 
     --card-hover-shadow: 0 2px 5px black;
 
@@ -113,6 +114,8 @@
   // 900-1200px tab landscape
   // 1200-1800 normal styles
 
-
+.card-list{
+  font-size: 1.8rem;
+}
 
 

@@ -1,0 +1,27 @@
+.course{
+    flex: 1;
+
+    &--cards-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__content{
+    padding: var(--content-padding);
+    background-color: var(--color-content-background);
+
+    }
+}
+
+.courseOutline-card{
+    color: var(--color-text-black-1);
+
+}
+
+.course-outline-year-select{
+    margin-bottom: 1.5rem;
+}
+
+.courseOutline-h1{
+    border-bottom: .2rem solid var(--content-bg-color-1);
+}

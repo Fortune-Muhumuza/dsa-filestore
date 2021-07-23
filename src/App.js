@@ -11,6 +11,7 @@ import Home from './components/Home'
 import Sidebar from './components/Sidebar'
 import Admin from './components/Admin'
 import Notes from './components/Notes'
+import CourseOutline from './components/CourseOutline'
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
           {/* <Header /> */}
           <Route path='/admin2000'>
             <Admin />
+          </Route>
+          <Route path='/courseOutline'>
+            <CourseOutline />
           </Route>
           <Route path='/'>
             <Home />

@@ -14,7 +14,9 @@ const Header = () => {
                 <form action="#" className='header__search'>
                     <input type='text' className='header__search--input' placeholder='search' />
                     <button className='header__search--button'>
-                        search
+                    <svg className="header--icon search-icon">
+                                <use href={`${sprite}#icon-search`}></use>
+                            </svg>
                     </button>
                 </form>
             </div>
