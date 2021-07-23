@@ -12,6 +12,7 @@ import Sidebar from './components/Sidebar'
 import Admin from './components/Admin'
 import Notes from './components/Notes'
 import CourseOutline from './components/CourseOutline'
+import Timetables from './components/Timetables';
 
 const App = () => {
   return (
@@ -32,6 +33,9 @@ const App = () => {
           </Route>
           <Route path='/courseOutline'>
             <CourseOutline />
+          </Route>
+          <Route path='/timetables'>
+            <Timetables />
           </Route>
           <Route path='/'>
             <Home />

@@ -1,0 +1,8 @@
+.timetable{
+    background-color: var(--content-bg-color-1);
+    flex: 1;
+
+    &__content{
+        padding: var(--content-padding);
+    }
+}

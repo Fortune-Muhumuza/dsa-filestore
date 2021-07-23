@@ -60,7 +60,7 @@ const Home = () => {
                         </NavLink></h2>
 
                         <h2>
-                        <NavLink to='/timetable' className='link'>
+                        <NavLink to='/timetables' className='link'>
                         <svg className="home__content--card-icon">
                                 <use href={`${sprite}#icon-table2`}></use>
                             </svg>

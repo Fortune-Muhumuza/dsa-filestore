@@ -114,10 +114,29 @@
 
   }
 
+  .side-nav__link-link-flexed{
+      margin-left: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+  }
+
+  .header-link{
+      color: var(--color-text-black-1);
+      font-size: 2.3rem;
+      font-weight: 700;
+  }
+
   .search-icon{
       height: 2rem;
       width: 2rem;
       fill: grey;
+  }
+
+  .avatar{
+    @include respond(tab-pot){
+        display: none;
+      }
   }
 
   
