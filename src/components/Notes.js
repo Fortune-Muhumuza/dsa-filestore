@@ -1,46 +1,60 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import "./Notes.scss";
 import { firebaseApp } from "../firebase";
 import Header from "./Header";
+import { setFiles } from '../store/reducers/notesSlice';
 
 const Notes = () => {
-  const [notes, setNotes] = useState([]);
 
-  const storageRef = firebaseApp.storage().ref();
+  const dispatch = useDispatch()
+  const notes = useSelector(state => state.notes.notes)
+  const notesStatus = useSelector(state => state.notes.status)
+  
 
-  const setFiles = () => {
-    const temp = []
-    storageRef.listAll().then(function (result) {
-      let path = storageRef.fullPath
-      result.items.forEach(fileRef => {
-        temp.push({ name: fileRef.name, url: "https://firebasestorage.googleapis.com/v0/b/dsawebapp-f3872.appspot.com/o/" + fileRef.name + "?alt=media" })
+  // const [notes, setNotes] = useState([]);
 
-      });
-    }).then(() => {
+ // const storageRef = firebaseApp.storage().ref();
 
-      // set data in your any state variable for later use
-      setNotes(temp)
-      console.log("temp is", temp)
-    }).catch(error => {
-      console.log(error);
-    })
-  }
+  // const setFiles = () => {
+  //   const temp = []
+  //   storageRef.listAll().then(function (result) {
+  //     let path = storageRef.fullPath
+  //     result.items.forEach(fileRef => {
+  //       temp.push({ name: fileRef.name, url: "https://firebasestorage.googleapis.com/v0/b/dsawebapp-f3872.appspot.com/o/" + fileRef.name + "?alt=media" })
+
+  //     });
+  //   }).then(() => {
+
+  //     // set data in your any state variable for later use
+  //     setNotes(temp)
+  //     console.log("temp is", temp)
+  //   }).catch(error => {
+  //     console.log(error);
+  //   })
+  // }
 
   useEffect(() => {
-    setFiles();
-    //console.log("notes are", notes);
-  }, []);
+    if (notesStatus === 'idle') {
+      dispatch(setFiles())
+    }
+  }, [notesStatus, dispatch])
+
+  // useEffect(() => {
+  //   //setFiles();
+  //   //console.log("notes are", notes);
+  // }, []);
 
   return (
     <div className="notes">
       <Header />
       <div className="notes__header">
-        <h1 class="notes__header--heading-primary">
-          <span class="notes__header--heading-primary--main">
+        <h1 className="notes__header--heading-primary">
+          <span className="notes__header--heading-primary--main">
             Download notes
           </span>
-          <span class="notes__header--heading-primary--sub">
-            8 files available
+          <span className="notes__header--heading-primary--sub">
+            {notes.length} files available
           </span>
         </h1>
 {/* 
@@ -63,16 +77,17 @@ const Notes = () => {
 
         <div className="notes__main-content--cards-container">
 
-          {/* {notes.map((note) => (
+          {notes.map((note) => (
             <div className="notes__main-content--cards-container-card">
-              <span>{note.name}</span>
-              <span><a className="a" href={note.url} download>Download</a></span>
+           
+              <span className="notes__main-content--cards-container-card-name">{note.name}</span>
+               <span><a className="download-button" href={note.url} download>Download</a></span>
             </div>
 
-          ))} */}
+          ))}
           
 
-          <div className="notes__main-content--cards-container-card">
+          {/* <div className="notes__main-content--cards-container-card">
             <span className="notes__main-content--cards-container-card-name">Digestive system</span>
             <span><a className="download-button" href="#" download>Download</a></span>
           </div>
@@ -100,7 +115,7 @@ const Notes = () => {
             <span className="notes__main-content--cards-container-card-name">Digestive system</span>
             <span><a className="download-button" href="#" download>Download</a></span>
           </div>
-        </div>
+        </div> */}
 
 
         {/* <table>
@@ -118,6 +133,7 @@ const Notes = () => {
           ))}
         </table> */}
 
+</div>
       </div>
     </div>
   );

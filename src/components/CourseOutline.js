@@ -9,8 +9,8 @@ const CourseOutline = () => {
             <div className="course__content">
                 <h1>Course outline</h1>
                 <div className="notes__header--select course-outline-year-select">
-                    <label for="course-units" className="label">Year:</label>
-                    <select name="course unit" className="notes__header--select-input">
+                    <label for="course-units" className="label-course-year">Year:</label>
+                    <select name="course unit" className="course-input">
                         <option value="">1</option>
                         <option value="">2</option>
                         <option value="">3</option>
@@ -22,7 +22,7 @@ const CourseOutline = () => {
                         <h1 className="home__content--card-heading courseOutline-h1">
                             Dental Public Health III
                         </h1>
-                        <ul className="card-list">
+                        <ul className="course-card-list">
                             <li>Principles of oral health promotion</li>
                             <li>Oral health education</li>
                             <li>Principles and theories of behavioral change for oral health</li>
@@ -38,7 +38,7 @@ const CourseOutline = () => {
                         <h1 className="home__content--card-heading courseOutline-h1">
                             Oral surgery III
                         </h1>
-                        <ul className="card-list">
+                        <ul className="course-card-list">
                             <li>Oral lesions</li>
                             <li>Oral medicine and pathology</li>
                             <li>Vascular conditions</li>
@@ -59,7 +59,7 @@ const CourseOutline = () => {
                         <h1 className="home__content--card-heading courseOutline-h1">
                             Prosthetics and Orthodontics
                         </h1>
-                        <ul className="card-list">
+                        <ul className="course-card-list">
                             <li>Introduction to orthodontic treatment</li>
                             <li>Types of appliances</li>
                             <li>Crowns</li>
@@ -78,7 +78,7 @@ const CourseOutline = () => {
                         <h1 className="home__content--card-heading courseOutline-h1">
                             Operative Dentistry III
                         </h1>
-                        <ul className="card-list">
+                        <ul className="course-card-list">
 
                             	<li>Dental Materials – composite and GI</li>
                             	<li>Endodontic Treatment- introduction, instruments and materials</li>

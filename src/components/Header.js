@@ -12,15 +12,15 @@ const Header = () => {
         <div className="header">
 
              <NavLink to='/' className=' side-nav__link-link-flexed'>
-                <svg className="header--icon">
+                {/* <svg className="header--icon">
                     <use href={`${sprite}#icon-home2`}></use>
-                </svg>
+                </svg> */}
                 <span className="header-link">Home</span>
             </NavLink>
 
-            <div>
+            <div className="header__search">
 
-                <form action="#" className='header__search'>
+                <form action="#" className=''>
                     <input type='text' className='header__search--input' placeholder='search' />
                     <button className='header__search--button'>
                         <svg className="header--icon search-icon">

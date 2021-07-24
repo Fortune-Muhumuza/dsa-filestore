@@ -22,6 +22,28 @@
     margin-bottom: 1.5rem;
 }
 
+.course-card-list{
+    list-style: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.label-course-year{
+    margin-left: 1rem;
+}
+
+.course-input{
+    width: 7rem;
+    padding: .5rem 1rem;
+    border-radius: .8rem;
+
+    &:focus{
+        outline: none;
+        background-color: rgb(245, 235, 235);
+    }
+}
+
 .courseOutline-h1{
     border-bottom: .2rem solid var(--content-bg-color-1);
+    font-weight: 900;
 }
