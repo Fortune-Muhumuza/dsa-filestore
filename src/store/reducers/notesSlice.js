@@ -9,8 +9,6 @@ const initialState = {
 
 const storageRef = firebaseApp.storage().ref();
 
-
-
 export const setFiles =  createAsyncThunk('notes/setFiles', async() => {
     const temp = []
    await storageRef.listAll().then(function (result) {

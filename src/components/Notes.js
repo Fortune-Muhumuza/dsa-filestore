@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import "./Notes.scss";
-import { firebaseApp } from "../firebase";
 import Header from "./Header";
 import { setFiles } from '../store/reducers/notesSlice';
 
@@ -12,27 +11,6 @@ const Notes = () => {
   const notesStatus = useSelector(state => state.notes.status)
   
 
-  // const [notes, setNotes] = useState([]);
-
- // const storageRef = firebaseApp.storage().ref();
-
-  // const setFiles = () => {
-  //   const temp = []
-  //   storageRef.listAll().then(function (result) {
-  //     let path = storageRef.fullPath
-  //     result.items.forEach(fileRef => {
-  //       temp.push({ name: fileRef.name, url: "https://firebasestorage.googleapis.com/v0/b/dsawebapp-f3872.appspot.com/o/" + fileRef.name + "?alt=media" })
-
-  //     });
-  //   }).then(() => {
-
-  //     // set data in your any state variable for later use
-  //     setNotes(temp)
-  //     console.log("temp is", temp)
-  //   }).catch(error => {
-  //     console.log(error);
-  //   })
-  // }
 
   useEffect(() => {
     if (notesStatus === 'idle') {
@@ -40,10 +18,27 @@ const Notes = () => {
     }
   }, [notesStatus, dispatch])
 
-  // useEffect(() => {
-  //   //setFiles();
-  //   //console.log("notes are", notes);
-  // }, []);
+
+  let content
+
+  if (notesStatus === 'loading') {
+    content = <div className="lds-dual-ring">Loading...</div>
+  } else if (notesStatus === 'succeeded') {
+    // Sort posts in reverse chronological order by datetime string
+    const renderedNotes = notes
+
+    content = renderedNotes.map(note => (
+     
+        <div className="notes__main-content--cards-container-card">
+       
+          <span className="notes__main-content--cards-container-card-name">{note.name}</span>
+           <span><a className="download-button" href={note.url} download>Download</a></span>
+        </div>
+    ))
+  } else if (notesStatus === 'failed') {
+    content = <div>Sorry there was a problem</div>
+  }
+
 
   return (
     <div className="notes">
@@ -77,61 +72,8 @@ const Notes = () => {
 
         <div className="notes__main-content--cards-container">
 
-          {notes.map((note) => (
-            <div className="notes__main-content--cards-container-card">
-           
-              <span className="notes__main-content--cards-container-card-name">{note.name}</span>
-               <span><a className="download-button" href={note.url} download>Download</a></span>
-            </div>
-
-          ))}
+          {content}
           
-
-          {/* <div className="notes__main-content--cards-container-card">
-            <span className="notes__main-content--cards-container-card-name">Digestive system</span>
-            <span><a className="download-button" href="#" download>Download</a></span>
-          </div>
-          <div className="notes__main-content--cards-container-card">
-            <span className="notes__main-content--cards-container-card-name">Digestive system</span>
-            <span><a className="download-button" href="#" download>Download</a></span>
-          </div>
-          <div className="notes__main-content--cards-container-card">
-            <span className="notes__main-content--cards-container-card-name">Digestive system</span>
-            <span><a className="download-button" href="#" download>Download</a></span>
-          </div>
-          <div className="notes__main-content--cards-container-card">
-            <span className="notes__main-content--cards-container-card-name">Digestive system</span>
-            <span><a className="download-button" href="#" download>Download</a></span>
-          </div>
-          <div className="notes__main-content--cards-container-card">
-            <span className="notes__main-content--cards-container-card-name">Digestive system</span>
-            <span><a className="download-button" href="#" download>Download</a></span>
-          </div>
-          <div className="notes__main-content--cards-container-card">
-            <span className="notes__main-content--cards-container-card-name">Digestive system</span>
-            <span><a className="download-button" href="#" download>Download</a></span>
-          </div>
-          <div className="notes__main-content--cards-container-card">
-            <span className="notes__main-content--cards-container-card-name">Digestive system</span>
-            <span><a className="download-button" href="#" download>Download</a></span>
-          </div>
-        </div> */}
-
-
-        {/* <table>
-          <tr>
-            <th>Name</th>
-            <th>Course unit</th>
-            <th>Download</th>
-          </tr>
-          {notes.map((note) => (
-              <tr>
-                <td>{note.name}</td>
-                <td>Anatomy</td>
-                <td><a className="a" href={note.url} download>Download</a></td>
-              </tr>
-          ))}
-        </table> */}
 
 </div>
       </div>

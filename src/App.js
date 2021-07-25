@@ -13,10 +13,17 @@ import Admin from './components/Admin'
 import Notes from './components/Notes'
 import CourseOutline from './components/CourseOutline'
 import Timetables from './components/Timetables';
+import Login from './components/Login'
+import { useDispatch, useSelector } from "react-redux";
 
 const App = () => {
+
+  const auth = useSelector((state) => state.auth);
+  const isLoggedIn = auth.isLoggedIn;
+
   return (
     <Router>
+      {!isLoggedIn? <Login /> : 
       <div className="container"> 
       
      
@@ -43,7 +50,9 @@ const App = () => {
           </Switch>
         </div>
       </div>
+}
     </Router>
+      
   )
 }
 

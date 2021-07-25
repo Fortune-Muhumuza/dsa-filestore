@@ -25,6 +25,8 @@
     --card-border-radius: 1.2rem;
    }
 
+
+
   
   /*
   breakpoint arguement choices
@@ -33,6 +35,8 @@
   tab-land
   big-desktop
   */
+
+  @import  "components/Loader.scss";
 
   @mixin respond($breakpoint) {
     @if $breakpoint == phone {

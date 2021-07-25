@@ -7,18 +7,17 @@ import sprite from "../assets/sprite.svg";
 import { NavLink } from 'react-router-dom'
 
 const Home = () => {
-    const userDetails = useSelector(state => state.home)
-
+    const userDetails = useSelector(state => state.auth.user)
 
     return (
         <div className="home">
             <Header />
             <div className="home__header">
                 <div class="home__header--text-box">
-                    <img src={userPicture} alt="user picture" className="home__header--text-box-picture" />
+                    <img src={userDetails.photoURL} alt="user picture" className="home__header--text-box-picture" />
                     <h1 class="heading-primary">
                         <span class="heading-primary--main">
-                            Welcome, Fortune
+                            Welcome, {userDetails.displayName}
                         </span>
                         <span class="heading-primary--sub">
                             You have 2 Notifications
